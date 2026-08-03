@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Berry Automotive logo</title>
+  <desc id="desc">The letters BA in a red circular badge</desc>
+  <rect width="512" height="512" rx="96" fill="#091724"/>
+  <circle cx="256" cy="256" r="188" fill="#c84539" stroke="#f2ecd6" stroke-width="24"/>
+  <text x="256" y="305" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="154" font-weight="900" letter-spacing="-12" fill="#fffdf7">BA</text>
+</svg>
