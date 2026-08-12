@@ -203,9 +203,178 @@
           <label>Your name<input name="name" type="text" autocomplete="name" required></label>
           <label>Best phone number<input name="phone" type="tel" autocomplete="tel" required></label>
           <label class="wide-field">Vehicle year, make, and model<input name="vehicle" type="text" placeholder="Example: 2016 Ford F-150" required></label>
-          <label>Service preference<select name="service"><option>Not sure</option><option>Automotive diagnostics</option><option>Brake service</option><option>Suspension repair</option><option>Engine repair</option><option>Engine replacement</option><option>Transmission replacement</option><option>Mobile service</option></select></label>
+
+          <div class="wide-field optional-service-intro">
+            <strong>Optional service details</strong>
+            <span>Choose as much as you know. You can skip every item in this section and describe the problem below.</span>
+          </div>
+
+          <label>Service category (optional)
+            <select id="service-category" name="category">
+              <option value="">Choose a category</option>
+              <option value="diagnostics">Diagnostics</option>
+              <option value="brakes">Brake service</option>
+              <option value="suspension">Suspension &amp; steering</option>
+              <option value="engine">Engine repair or replacement</option>
+              <option value="transmission">Transmission diagnosis or replacement</option>
+              <option value="not-sure">Not sure — please advise</option>
+            </select>
+          </label>
+          <label>Specific job (optional)
+            <select id="specific-job" name="job" aria-describedby="job-help" disabled>
+              <option value="">Choose a service category first</option>
+            </select>
+            <small class="field-help" id="job-help">These choices change when the service category changes.</small>
+          </label>
+          <label class="wide-field">Preferred service setting (optional)
+            <select name="setting">
+              <option value="">Choose a service setting</option>
+              <option>At the shop</option>
+              <option>Mobile service at my location</option>
+              <option>Not sure — please advise</option>
+            </select>
+          </label>
+          <div class="wide-field dynamic-job-notice" id="dynamic-job-notice" aria-live="polite">Choose a service category above. The specific-job list will then change automatically.</div>
+
           <label>Preferred appointment date<input name="date" type="date" required></label>
-          <label>Preferred time<select name="time" required><option>Flexible</option><option>Morning (8 AM-12 PM)</option><option>Midday (12 PM-2 PM)</option><option>Afternoon (2 PM-5:30 PM)</option></select></label>
+          <label>Preferred appointment time
+            <select name="time" required>
+              <option value="">Choose a time</option>
+              <option>8:00-9:00 AM</option>
+              <option>9:00-10:00 AM</option>
+              <option>10:00-11:00 AM</option>
+              <option>11:00 AM-12:00 PM</option>
+              <option>2:00-3:00 PM</option>
+              <option>3:00-4:00 PM</option>
+              <option>4:00-5:00 PM</option>
+            </select>
+            <small class="field-help">No appointment windows are offered from 12:00-2:00 PM. All requests require confirmation.</small>
+          </label>
+
+          <fieldset class="wide-field symptom-fieldset">
+            <legend>Symptoms or concerns (optional — select all that apply)</legend>
+            <div class="symptom-groups">
+              <section class="symptom-group">
+                <h3>Starting &amp; electrical</h3>
+                <div class="concern-options">
+                  <label class="concern-option"><input name="concerns" value="Will not start" type="checkbox">Will not start</label>
+                  <label class="concern-option"><input name="concerns" value="Hard or slow to start" type="checkbox">Hard or slow to start</label>
+                  <label class="concern-option"><input name="concerns" value="Battery keeps dying" type="checkbox">Battery keeps dying</label>
+                  <label class="concern-option"><input name="concerns" value="Check-engine or warning light" type="checkbox">Check-engine or warning light</label>
+                  <label class="concern-option"><input name="concerns" value="Electrical item not working" type="checkbox">Electrical item not working</label>
+                </div>
+              </section>
+
+              <section class="symptom-group">
+                <h3>Engine &amp; cooling</h3>
+                <div class="concern-options">
+                  <label class="concern-option"><input name="concerns" value="Running rough or misfiring" type="checkbox">Running rough or misfiring</label>
+                  <label class="concern-option"><input name="concerns" value="Stalling or shutting off" type="checkbox">Stalling or shutting off</label>
+                  <label class="concern-option"><input name="concerns" value="Loss of power" type="checkbox">Loss of power</label>
+                  <label class="concern-option"><input name="concerns" value="Overheating" type="checkbox">Overheating</label>
+                  <label class="concern-option"><input name="concerns" value="Smoke or exhaust concern" type="checkbox">Smoke or exhaust concern</label>
+                  <label class="concern-option"><input name="concerns" value="Burning or fuel smell" type="checkbox">Burning or fuel smell</label>
+                </div>
+              </section>
+
+              <section class="symptom-group">
+                <h3>Brakes</h3>
+                <div class="concern-options">
+                  <label class="concern-option"><input name="concerns" value="Grinding or squeaking" type="checkbox">Grinding or squeaking</label>
+                  <label class="concern-option"><input name="concerns" value="Soft or spongy brake pedal" type="checkbox">Soft or spongy brake pedal</label>
+                  <label class="concern-option"><input name="concerns" value="Vehicle pulls while braking" type="checkbox">Vehicle pulls while braking</label>
+                  <label class="concern-option"><input name="concerns" value="Brake vibration or pulsation" type="checkbox">Brake vibration or pulsation</label>
+                  <label class="concern-option"><input name="concerns" value="Longer stopping distance" type="checkbox">Longer stopping distance</label>
+                  <label class="concern-option"><input name="concerns" value="Parking-brake problem" type="checkbox">Parking-brake problem</label>
+                </div>
+              </section>
+
+              <section class="symptom-group">
+                <h3>Transmission &amp; driving</h3>
+                <div class="concern-options">
+                  <label class="concern-option"><input name="concerns" value="Slipping" type="checkbox">Slipping</label>
+                  <label class="concern-option"><input name="concerns" value="Delayed or hard shifting" type="checkbox">Delayed or hard shifting</label>
+                  <label class="concern-option"><input name="concerns" value="Will not go into gear" type="checkbox">Will not go into gear</label>
+                  <label class="concern-option"><input name="concerns" value="Vehicle will not move" type="checkbox">Vehicle will not move</label>
+                  <label class="concern-option"><input name="concerns" value="Jerking or hesitation" type="checkbox">Jerking or hesitation</label>
+                  <label class="concern-option"><input name="concerns" value="Transmission-fluid leak" type="checkbox">Transmission-fluid leak</label>
+                </div>
+              </section>
+
+              <section class="symptom-group">
+                <h3>Steering &amp; suspension</h3>
+                <div class="concern-options">
+                  <label class="concern-option"><input name="concerns" value="Pulls or wanders" type="checkbox">Pulls or wanders</label>
+                  <label class="concern-option"><input name="concerns" value="Loose or hard steering" type="checkbox">Loose or hard steering</label>
+                  <label class="concern-option"><input name="concerns" value="Clunking over bumps" type="checkbox">Clunking over bumps</label>
+                  <label class="concern-option"><input name="concerns" value="Bouncy or rough ride" type="checkbox">Bouncy or rough ride</label>
+                  <label class="concern-option"><input name="concerns" value="Uneven tire wear" type="checkbox">Uneven tire wear</label>
+                  <label class="concern-option"><input name="concerns" value="Vehicle sits low or uneven" type="checkbox">Vehicle sits low or uneven</label>
+                </div>
+              </section>
+
+              <section class="symptom-group">
+                <h3>Other concerns</h3>
+                <div class="concern-options">
+                  <label class="concern-option"><input name="concerns" value="Fluid leak" type="checkbox">Fluid leak</label>
+                  <label class="concern-option"><input name="concerns" value="Unusual noise" type="checkbox">Unusual noise</label>
+                  <label class="concern-option"><input name="concerns" value="Vibration or shaking" type="checkbox">Vibration or shaking</label>
+                  <label class="concern-option"><input name="concerns" value="Problem is intermittent" type="checkbox">Problem is intermittent</label>
+                  <label class="concern-option"><input name="concerns" value="Recent repair did not fix it" type="checkbox">Recent repair did not fix it</label>
+                  <label class="concern-option"><input name="concerns" value="Not sure — need diagnosis" type="checkbox">Not sure — need diagnosis</label>
+                </div>
+              </section>
+
+              <section class="symptom-group symptom-group-more">
+                <h3>More symptoms &amp; concerns</h3>
+                <div class="concern-options concern-options-two-column">
+                  <label class="concern-option"><input name="concerns" value="Clicking while turning" type="checkbox">Clicking while turning</label>
+                  <label class="concern-option"><input name="concerns" value="Humming or grinding while driving" type="checkbox">Humming or grinding while driving</label>
+                  <label class="concern-option"><input name="concerns" value="Knocking or ticking from engine" type="checkbox">Knocking or ticking from engine</label>
+                  <label class="concern-option"><input name="concerns" value="Rattling sound" type="checkbox">Rattling sound</label>
+                  <label class="concern-option"><input name="concerns" value="Squealing belt sound" type="checkbox">Squealing belt sound</label>
+                  <label class="concern-option"><input name="concerns" value="Steering wheel shakes" type="checkbox">Steering wheel shakes</label>
+                  <label class="concern-option"><input name="concerns" value="Brake pedal goes near the floor" type="checkbox">Brake pedal goes near the floor</label>
+                  <label class="concern-option"><input name="concerns" value="Poor fuel mileage" type="checkbox">Poor fuel mileage</label>
+                  <label class="concern-option"><input name="concerns" value="Uses or loses oil" type="checkbox">Uses or loses oil</label>
+                  <label class="concern-option"><input name="concerns" value="Uses or loses coolant" type="checkbox">Uses or loses coolant</label>
+                  <label class="concern-option"><input name="concerns" value="Air or heat changes while driving" type="checkbox">Air or heat changes while driving</label>
+                  <label class="concern-option"><input name="concerns" value="Problem began after hitting a pothole" type="checkbox">Problem began after hitting a pothole</label>
+                  <label class="concern-option"><input name="concerns" value="Problem began after another repair" type="checkbox">Problem began after another repair</label>
+                  <label class="concern-option"><input name="concerns" value="Vehicle was recently towed" type="checkbox">Vehicle was recently towed</label>
+                  <label class="concern-option"><input name="concerns" value="Vehicle may be unsafe to drive" type="checkbox">Vehicle may be unsafe to drive</label>
+                  <label class="concern-option"><input name="concerns" value="Want a second opinion" type="checkbox">Want a second opinion</label>
+                </div>
+              </section>
+            </div>
+          </fieldset>
+
+          <fieldset class="wide-field symptom-fieldset">
+            <legend>When does it happen? (optional — select all that apply)</legend>
+            <div class="symptom-groups">
+              <section class="symptom-group">
+                <h3>Vehicle condition</h3>
+                <div class="concern-options">
+                  <label class="concern-option"><input name="timing" value="At startup" type="checkbox">At startup</label>
+                  <label class="concern-option"><input name="timing" value="While idling" type="checkbox">While idling</label>
+                  <label class="concern-option"><input name="timing" value="When engine is cold" type="checkbox">When engine is cold</label>
+                  <label class="concern-option"><input name="timing" value="After warming up" type="checkbox">After warming up</label>
+                </div>
+              </section>
+              <section class="symptom-group">
+                <h3>While driving</h3>
+                <div class="concern-options">
+                  <label class="concern-option"><input name="timing" value="While accelerating" type="checkbox">While accelerating</label>
+                  <label class="concern-option"><input name="timing" value="While braking" type="checkbox">While braking</label>
+                  <label class="concern-option"><input name="timing" value="While turning" type="checkbox">While turning</label>
+                  <label class="concern-option"><input name="timing" value="Going over bumps" type="checkbox">Going over bumps</label>
+                  <label class="concern-option"><input name="timing" value="At highway speed" type="checkbox">At highway speed</label>
+                  <label class="concern-option"><input name="timing" value="All the time" type="checkbox">All the time</label>
+                </div>
+              </section>
+            </div>
+          </fieldset>
+
           <label class="wide-field">What is the vehicle doing?<textarea name="details" rows="5" placeholder="Describe the problem, warning lights, noises, or service needed." required></textarea></label>
           <button class="button button-primary form-submit" type="submit">Prepare my appointment request <span aria-hidden="true">&rarr;</span></button>
           <p class="form-note">This opens a text message to 919-591-4206; it does not send until you press send. Berry Automotive must confirm the appointment afterward.</p>
