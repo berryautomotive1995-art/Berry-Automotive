@@ -18,92 +18,165 @@
     <meta name="theme-color" content="#091724">
     <link rel="canonical" href="https://berryautomotivenc.com/">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="quick-answers.css">
     <link rel="icon" href="berry-automotive-logo.svg" type="image/svg+xml">
     <script type="application/ld+json">
 {
-          "@context": "https://schema.org",
-          "@type": "AutoRepair",
-          "@id": "https://berryautomotivenc.com/#auto-repair",
-          "name": "Berry Automotive",
-          "url": "https://berryautomotivenc.com/",
-          "logo": "https://berryautomotivenc.com/berry-automotive-logo.svg",
-          "hasMap": "https://www.google.com/maps/search/?api=1&query=Berry%20Automotive%2C%207616%20Wake%20Rd%2C%20Durham%2C%20NC%2027713",
-          "telephone": "+1-919-591-4206",
-          "email": "berryautomotivenc@gmail.com",
-          "description": "Owner-operated shop and mobile auto repair serving Durham, North Carolina. Service is available by confirmed appointment only.",
-          "priceRange": "$",
-          "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "7616 Wake Rd",
-                "addressLocality": "Durham",
-                "addressRegion": "NC",
-                "postalCode": "27713",
-                "addressCountry": "US"
-          },
-          "areaServed": "Durham, North Carolina and locations within 15 miles of 7616 Wake Rd",
-          "openingHoursSpecification": [
-                {
-                      "@type": "OpeningHoursSpecification",
-                      "dayOfWeek": [
-                            "https://schema.org/Monday",
-                            "https://schema.org/Tuesday",
-                            "https://schema.org/Wednesday",
-                            "https://schema.org/Thursday",
-                            "https://schema.org/Friday"
-                      ],
-                      "opens": "08:00",
-                      "closes": "17:30"
-                }
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AutoRepair",
+      "@id": "https://berryautomotivenc.com/#auto-repair",
+      "name": "Berry Automotive",
+      "url": "https://berryautomotivenc.com/",
+      "logo": "https://berryautomotivenc.com/berry-automotive-logo.svg",
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Berry%20Automotive%2C%207616%20Wake%20Rd%2C%20Durham%2C%20NC%2027713",
+      "telephone": "+1-919-591-4206",
+      "email": "berryautomotivenc@gmail.com",
+      "description": "Owner-operated shop and mobile auto repair serving Durham, North Carolina. Service is available by confirmed appointment only.",
+      "priceRange": "$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "7616 Wake Rd",
+        "addressLocality": "Durham",
+        "addressRegion": "NC",
+        "postalCode": "27713",
+        "addressCountry": "US"
+      },
+      "areaServed": "Durham, North Carolina and locations within 15 miles of 7616 Wake Rd",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "https://schema.org/Monday",
+            "https://schema.org/Tuesday",
+            "https://schema.org/Wednesday",
+            "https://schema.org/Thursday",
+            "https://schema.org/Friday"
           ],
-          "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "Auto repair services",
-                "itemListElement": [
-                      {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                  "@type": "Service",
-                                  "name": "Brake service"
-                            }
-                      },
-                      {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                  "@type": "Service",
-                                  "name": "Suspension repair"
-                            }
-                      },
-                      {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                  "@type": "Service",
-                                  "name": "Automotive diagnostics"
-                            }
-                      },
-                      {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                  "@type": "Service",
-                                  "name": "Engine repair and replacement"
-                            }
-                      },
-                      {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                  "@type": "Service",
-                                  "name": "Transmission replacement"
-                            }
-                      },
-                      {
-                            "@type": "Offer",
-                            "itemOffered": {
-                                  "@type": "Service",
-                                  "name": "Mobile auto repair"
-                            }
-                      }
-                ]
+          "opens": "08:00",
+          "closes": "17:30"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Auto repair services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "url": "https://berryautomotivenc.com/brake-repair-durham-nc.html",
+            "itemOffered": {
+              "@type": "Service",
+              "@id": "https://berryautomotivenc.com/brake-repair-durham-nc.html#service",
+              "name": "Brake service",
+              "serviceType": "Brake repair",
+              "url": "https://berryautomotivenc.com/brake-repair-durham-nc.html",
+              "provider": {
+                "@id": "https://berryautomotivenc.com/#auto-repair"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "url": "https://berryautomotivenc.com/suspension-repair-durham-nc.html",
+            "itemOffered": {
+              "@type": "Service",
+              "@id": "https://berryautomotivenc.com/suspension-repair-durham-nc.html#service",
+              "name": "Suspension repair",
+              "serviceType": "Suspension and steering repair",
+              "url": "https://berryautomotivenc.com/suspension-repair-durham-nc.html",
+              "provider": {
+                "@id": "https://berryautomotivenc.com/#auto-repair"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "url": "https://berryautomotivenc.com/diagnostics-durham-nc.html",
+            "itemOffered": {
+              "@type": "Service",
+              "@id": "https://berryautomotivenc.com/diagnostics-durham-nc.html#service",
+              "name": "Automotive diagnostics",
+              "serviceType": "Automotive diagnostics",
+              "url": "https://berryautomotivenc.com/diagnostics-durham-nc.html",
+              "provider": {
+                "@id": "https://berryautomotivenc.com/#auto-repair"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "url": "https://berryautomotivenc.com/engine-repair-durham-nc.html",
+            "itemOffered": {
+              "@type": "Service",
+              "@id": "https://berryautomotivenc.com/engine-repair-durham-nc.html#service",
+              "name": "Engine repair and replacement",
+              "serviceType": "Engine repair and replacement",
+              "url": "https://berryautomotivenc.com/engine-repair-durham-nc.html",
+              "provider": {
+                "@id": "https://berryautomotivenc.com/#auto-repair"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "url": "https://berryautomotivenc.com/transmission-replacement-durham-nc.html",
+            "itemOffered": {
+              "@type": "Service",
+              "@id": "https://berryautomotivenc.com/transmission-replacement-durham-nc.html#service",
+              "name": "Transmission replacement",
+              "serviceType": "Transmission replacement",
+              "url": "https://berryautomotivenc.com/transmission-replacement-durham-nc.html",
+              "provider": {
+                "@id": "https://berryautomotivenc.com/#auto-repair"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "url": "https://berryautomotivenc.com/mobile-mechanic-durham-nc.html",
+            "itemOffered": {
+              "@type": "Service",
+              "@id": "https://berryautomotivenc.com/mobile-mechanic-durham-nc.html#service",
+              "name": "Mobile mechanic service",
+              "serviceType": "Mobile automotive repair",
+              "url": "https://berryautomotivenc.com/mobile-mechanic-durham-nc.html",
+              "provider": {
+                "@id": "https://berryautomotivenc.com/#auto-repair"
+              }
+            }
           }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://berryautomotivenc.com/#website",
+      "url": "https://berryautomotivenc.com/",
+      "name": "Berry Automotive",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@id": "https://berryautomotivenc.com/#auto-repair"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://berryautomotivenc.com/#webpage",
+      "url": "https://berryautomotivenc.com/",
+      "name": "Auto Repair & Mobile Mechanic in Durham, NC | Berry Automotive",
+      "inLanguage": "en-US",
+      "isPartOf": {
+        "@id": "https://berryautomotivenc.com/#website"
+      },
+      "about": {
+        "@id": "https://berryautomotivenc.com/#auto-repair"
+      },
+      "mainEntity": {
+        "@id": "https://berryautomotivenc.com/#auto-repair"
+      }
     }
+  ]
+}
     </script>
   </head>
   <body>
@@ -117,6 +190,7 @@
           <a href="#services">Services</a>
           <a href="#mobile">Mobile repair</a>
           <a href="#about">About</a>
+          <a href="#questions">Questions</a>
           <a href="#request">Contact</a>
         </nav>
         <a class="header-call" href="tel:+19195914206"><span>Call now</span><strong>919-591-4206</strong></a>
@@ -187,6 +261,40 @@
       <section class="about section" id="about">
         <div class="about-statement"><p class="eyebrow">The Berry Automotive approach</p><h2>Know what is wrong. Know what comes next.</h2></div>
         <div class="about-copy"><p>Berry Automotive is an owner-operated auto repair business serving Durham, NC, from 7616 Wake Rd. Bring your vehicle to the shop or request mobile service within 15 miles for brakes, suspension, diagnostics, engine repair or replacement, and transmission replacement.</p><blockquote>“Straight answers, clear next steps, and dependable work.”</blockquote></div>
+      </section>
+
+      <section class="quick-answers section" id="questions" aria-labelledby="quick-answers-heading">
+        <div class="quick-answers-heading">
+          <p class="eyebrow">Common questions</p>
+          <h2 id="quick-answers-heading">Quick answers before you call.</h2>
+          <p>Local auto repair information from Berry Automotive in Durham, North Carolina.</p>
+        </div>
+        <div class="quick-answers-grid">
+          <article>
+            <h3>Where is Berry Automotive located?</h3>
+            <p>Berry Automotive is located at <a href="https://www.google.com/maps/search/?api=1&amp;query=Berry%20Automotive%2C%207616%20Wake%20Rd%2C%20Durham%2C%20NC%2027713" target="_blank" rel="noopener">7616 Wake Rd, Durham, NC 27713</a>. Shop service is by confirmed appointment only. Call or text before bringing your vehicle.</p>
+          </article>
+          <article>
+            <h3>Does Berry Automotive offer mobile mechanic service?</h3>
+            <p>Yes. Berry Automotive offers eligible mobile diagnosis and repair within 15 miles of 7616 Wake Rd in Durham. The mobile-service fee is $20. <a href="/mobile-mechanic-durham-nc.html">See how mobile service works</a>, then call or text to confirm your location and repair qualify.</p>
+          </article>
+          <article>
+            <h3>What auto repairs does Berry Automotive provide?</h3>
+            <p>Berry Automotive provides <a href="/brake-repair-durham-nc.html">brake service</a>, <a href="/suspension-repair-durham-nc.html">suspension repair</a>, <a href="/diagnostics-durham-nc.html">automotive diagnostics</a>, <a href="/engine-repair-durham-nc.html">engine repair and replacement</a>, and <a href="/transmission-replacement-durham-nc.html">transmission replacement</a>. Major engine work and transmission replacement are generally handled at the shop.</p>
+          </article>
+          <article>
+            <h3>What are Berry Automotive's hours?</h3>
+            <p>Appointment hours are Monday through Friday, 8:00 AM to 5:30 PM. Service is by confirmed appointment only. Requested dates and times are preferences until Berry Automotive confirms them by call or text.</p>
+          </article>
+          <article>
+            <h3>How much are diagnostics and labor?</h3>
+            <p>The diagnostic fee is $80, labor is $80 per hour, and mobile service has a $20 fee within the 15-mile service area. The repair estimate depends on your vehicle, diagnosis, parts, and work required. Call or text for an estimate.</p>
+          </article>
+          <article>
+            <h3>How do I contact Berry Automotive or request an appointment?</h3>
+            <p><a href="tel:+19195914206">Call 919-591-4206</a>, <a href="sms:+19195914206">text 919-591-4206</a>, or use the <a href="#request">online appointment request</a>. The form prepares a text message for you to send; your appointment is booked only after Berry Automotive confirms it.</p>
+          </article>
+        </div>
       </section>
 
       <section class="request-section" id="request">
